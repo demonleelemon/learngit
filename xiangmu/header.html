@@ -1,0 +1,219 @@
+
+
+		<meta charset="UTF-8">
+		<title>tps商城</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="shortcut icon" href="img/bitbug_favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		
+		<body>
+	<!--main_header    头部三部分-->		
+		<div id="header">
+			<div class="w">
+				<ul class="ul l">
+					<li id="lFirst" class="li_f1 l">
+						<a href="javascript:;" class="up">
+							<s class="l qizhi">
+								<img src="img/cn.jpg"/>
+							</s>
+							<span>中国</span>
+						</a>
+						<ol class="ol" style="z-index: 2;">
+							<li>
+								<a href="javascript:;">
+									<s class="l qizhi">
+										<img src="img/us.jpg"/>
+											</s>
+									<span>U.S.A</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<s class="l qizhi">
+										<img src="img/ko.jpg"/>
+									</s>
+									<span>한글</span>
+						</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<s class="l qizhi">
+										<img src="img/hk.jpg"/>
+									</s>
+									<span>香港</span>
+						</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<s class="l qizhi">
+										<img src="img/cn.jpg"/>
+									</s>
+									<span>中国</span>
+						</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="other">
+									Other
+								</a>
+							</li>
+						</ol>
+					</li>
+					<li class="li_f2 l">
+						<a href="javascript::" class="right">¥人民币</a>
+						<ol class="ol"  style="z-index: 2;">
+							<li><a href="avascript::">$美元</a></li>
+							<li><a href="avascript::">¥人民币</a></li>
+							<li><a href="avascript::">HK¥港币</a></li>
+							<li><a href="avascript::">₩韩币</a></li>
+						</ol>
+					</li>
+				</ul>	
+				<ul class="ulr r">
+					<li class="l one"><a class="main" id="log_aaa" href="log in.html">登陆</a>丨</li>
+					<li class="l two"><a id="log_aaaa" href="log in.html">注册</a></li>
+					<li class="l three"><a href="javascript:;">★&nbsp;&nbsp;我的关注(<span>0</span>)</a></li>
+					<li class="l four">
+						<a href="javascript:;">个人中心</a>
+						<ol>
+							<li>
+							<a>我的订单</a>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="head">
+			<div class="w">
+				<h1><a href="#"><img src="img/tps.png" class=" log"/></a></h1>
+				<h1><a href="#"><img src="img/138com.png" class=" log1"/></a></h1>
+				<input class="sou" type="text" placeholder="请输入关键词搜索商品" />
+				<input class="sou1"  type="button"/>
+					<a class="shopcar" href="shoppingcart.html">
+					购物车<b>0</b>	
+					</a>
+			</div>
+		</div>
+		<!--------------------导航栏------------------->
+		<div class="part header_nav_parent" >
+				<div class="header_nav main"style="z-index: 1;">
+					<div class="catalog">
+						<p>
+							全部商品分类
+							<a class="fa-angle-down">∨</a>
+						</p>
+						<ul class="class_list">
+							
+						</ul>
+					</div>
+					<div class="nav_rows">
+						<!--根据不同的参数，生成不同页面-->
+						<a href="index.html">商城首页</a>
+						<a href="show_page.html?title=new">新品上市</a>
+						<a href="show_page.html?title=hot">口碑热卖</a>
+						<a href="show_page.html?title=free">包邮专区</a>
+						<a href="show_page.html?title=promote">特惠促销</a>
+						<a href="">旅游</a>
+						<a href="">关于我们</a>
+					</div>
+				</div>
+			</div>
+	</div>
+</body>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/menu.js" ></script>
+		<script type="text/javascript">
+			$(function() { 			  
+			 
+                   //搜索框的吸顶效果，当body向下滚动超过600后，搜索框相对向下慢慢滚动，否则在0-600之间，搜//索框执行慢慢向上滚动效果		 
+			 	$(window).scroll(function(){
+					if($("body").scrollTop()||$("html").scrollTop()>600){
+						$(".floatSearch").stop().slideDown("slow");
+					}else{
+						$(".floatSearch").stop().slideUp("slow");
+					}
+				})
+			 
+			
+			 
+			 //动态展示列表树，获取catalog中的json数据
+				var url="json/catalog.json";
+				$.get(url,function(str){
+					for (var i in str) {
+						//i表示最左边的大类商品名称，放在ul中的li中，然后a2=i；a2链接到i的json数据对应的列表页
+						var li=document.createElement("li");
+						var a2=document.createElement("a");
+						a2.innerHTML=i;
+						a2.className="cellTop";
+						a2.href="list_page.html?url="+i+".json";
+						li.appendChild(a2);
+						var div=document.createElement("div");
+						div.className="subclass_list_parent";
+						var ul=document.createElement("ul");
+						ul.className="subclass_list";
+						
+						var arr=str[i];
+						//获取中类商品对象
+						for (var j=0;j<arr.length;j++) {
+							var obj=arr[j];
+							//获取中类商品的各个子并布局
+							for (var n in obj) {
+								//console.log(n);
+								var li1=document.createElement("li");
+								var a1=document.createElement("a");
+								a1.innerHTML=n;
+								a1.className="cellTop";
+								a1.href="list_page.html?url="+i+".json&classlist="+n;
+								li1.appendChild(a1);
+								li1.className="class_name";
+								var li2=document.createElement("li");
+									li2.className="brand";
+								ul.appendChild(li1);
+								ul.appendChild(li2);
+								var newarr=obj[n].split("|");
+								for (var m=0;m<newarr.length;m++) {
+									
+									var a=document.createElement("a");
+									a.innerHTML=newarr[m];
+									li2.appendChild(a);
+								}
+								$(".brand a").last().css("clear","both");
+							}
+							
+						}
+						div.appendChild(ul);
+						li.appendChild(div);
+						$(".class_list").append(li);
+						
+					}
+					//列表树的显示隐藏
+					$(".catalog").mouseenter(function(){
+						$(".catalog .class_list").stop().slideDown("slow");
+					})
+					$(".catalog").mouseleave(function(){
+						$(".catalog .class_list").stop().slideUp("slow");
+					})
+				 
+				 
+					$(".class_list>li").mouseenter(function(){
+						$(this).children().first().next().stop().fadeIn("slow");
+					})
+					$(".class_list>li").mouseleave(function(){
+						$(this).children().first().next().stop().fadeOut();
+					})
+					
+				},"json")				
+			}); 
+			 
+	
+			 
+		</script>
+
+
+
+                  
+
+                                                                        		
+                                                                                
+                                    

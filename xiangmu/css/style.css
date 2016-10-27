@@ -1,0 +1,231 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------重置样式------------------*/
+body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,dd,dl,dt,img,input,a{
+	 padding:0;
+	 margin:0;
+	  }
+img{
+	display:block;
+	border:0px;
+	 }
+
+ul,ol{
+	list-style:none;
+	}
+body{
+	font-size:12px;
+	font-family:"微软雅黑"; 
+	color:#3e3e3e;
+	}
+a{
+	text-decoration:none; 
+	color:#3e3e3e;
+	}
+a:hover{
+	text-decoration:none; 
+	color:#f00;
+	}
+
+/*--------------公共样式-----------------*/
+.w{
+	width:1200px; 
+	margin:0 auto;
+	}
+.l{
+	float:left;
+	}
+.r{
+	float:right;
+	}
+html{
+	width: 1263px;
+	height: 100%;
+}
+	/*--------------header-----------------*/
+	#header{
+		width: 100%;
+		background: #f1f1f1;
+		
+		
+	}
+	#header .w{
+		background: #f1f1f1;
+		height: 36px;
+		position: relative;
+	}
+	#header .w ul.ul li.li_f1{
+		width: 80px;
+		
+	}
+	#header .w ul.ul li.li_f1 a.up span{
+		display: inline-block;
+		line-height: 36px;
+	}
+	#header .w ul.ul li.li_f1 a.up .qizhi{
+		height: 11px;
+		padding-top: 13px;
+		padding-right: 5px;
+		padding-left: 15px;
+	}
+	#header .w ul.ul li.li_f1 a.up .qizhi img{
+		height: 11px;
+	}
+	#header .w ul.ul li.li_f1 ol.ol{
+		
+		background: white;
+		width: 85px;
+		display: none;
+		z-index: 1;
+		border: 1px solid #ccc;
+		border-top: 0;
+		position: absolute;
+	}
+	#header .w ul.ul li.li_f1 ol.ol li a .qizhi img{
+		height: 11px;
+		padding: 8px 5px 8px 15px;
+		/*padding-right: 5px;
+		padding-left: 15px;*/
+	}
+	
+	#header .w ul.ul li.li_f1 ol.ol li a span{
+		display: inline-block;
+		padding: 7px 0px;
+	}
+	#header .w ul.ul li.li_f1 ol.ol li a.other{
+		padding: 8px 5px 8px 20px;
+		display: block;
+	}
+	#header .w ul.ul li.li_f2{
+		width: 80px;
+		margin-left: 10px;
+	}
+	#header .w ul.ul li.li_f2 a.right{
+		line-height: 36px;
+		padding-left: 20px;
+	} 	
+	#header .w ul.ul li.li_f2 ol{
+		background: white;
+		width: 85px;
+		display: none;
+		z-index: 1;
+		border: 1px solid #ccc;
+		border-top: 0;
+		position: absolute;
+	}
+	#header .w ul.ul li.li_f2 ol li{
+		line-height: 30px;	
+		padding-left: 20px;
+	}
+	#header .w ul.ulr li{
+		line-height: 36px;
+		
+	}
+	#header .w ul.ulr li a{
+		margin: 0 10px;
+	}
+	#header .w ul.ulr li.one a{
+		color: red;
+	}
+	#header .w ul.ulr li.two a{
+		color: red;
+	}
+	#header .w ul.ulr li.three a:hover{
+		color: red;
+	}
+	#header .w ul.ulr li.four ol{
+		display: none;
+		position: absolute;
+		z-index: 1;
+	}
+	/*--------------head-----------------*/
+	#head{
+		width: 100%;
+		height: 110px;
+		
+		line-height: 110px;
+	}
+	#head .w{
+		position: relative;
+	}
+	#head .w h1 a img.log{
+		padding-top: 20px;
+		width: 70px;
+		position: absolute;
+		/*z-index: 0;*/
+		/*display: inline-block;*/
+	}
+	#head .w h1 a img.log1{
+		padding-top: 45px;
+		position: absolute;
+		left: 70px;
+		/*z-index: 0;*/
+		/*display: inline-block;*/
+	}
+	#head .w .sou{
+		border-radius: 2px;
+		/*margin-left: 75px;*/
+		padding-left: 20px;
+		width: 720px;
+		height: 40px;
+		border: 1px solid red;
+		position: absolute;
+		left: 255px;
+		top: 35px;
+		
+	}
+	#head .w .sou1{
+		width: 42px;
+		height: 42px;
+		background:#f13c41 url(../img/sou.jpg) no-repeat center;
+		position: absolute;
+		left: 996px;
+		top: 35px;
+		border: 1px solid #F13C41;
+		border-radius: 2px;
+		cursor: pointer;
+	}
+	#head .w .shopcar{
+		width: 120px;
+		height: 42px;
+		line-height: 42px;
+		background: #F13C41 url(../img/shopcar.jpg) no-repeat 10px center;
+		position: absolute;
+		right: 0px;
+		top: 35px;
+		text-align: center;
+		color: white;
+		font-size: 16px;
+		
+	}
+	#head .w .shopcar:hover{
+		box-shadow: 3px 3px 10px #888888;
+	}
+	#head .w .shopcar b{
+		position: absolute;
+		left: 0;
+		top: -14px;
+		display: inline-block;
+		font-size: 12px;
+	}
+	
+	
+/*--------------navigation-----------------*/
+	#navigation{
+		height: 42px;
+		line-height: 42px;
+		background: #1f1f1f;
+		color: white;
+	}
+	#navigation .w{
+		height: 42px;
+	}
+	#navigation .w ul li{
+		display: inline-block;
+		width: 126px;
+		text-align: center;
+	}
+	#navigation .w ul li a{
+		color: white;
+	}

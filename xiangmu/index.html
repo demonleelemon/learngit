@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>跨境电商-正品低价、品质保证、享受会员优惠政策，轻松愉快购物！ - TPS商城</title>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" href="css/slider.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/foote.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+	</head>
+	
+	<body>
+
+		<!--------------------导航栏------------------->
+		<div id="header" class="header"></div>
+		<!--轮播图-->
+		<div id="slider">
+			<span id="slider_left"></span>
+			<span id="slider_right"></span>
+			<ul>
+				<li><img src="img/slider_1.jpg" /></li>
+				<li><img src="img/slider_2.jpg" /></li>
+				<li><img src="img/slider_3.jpg" /></li>
+				<li><img src="img/slider_4.jpg" /></li>
+			</ul>
+			<ol>
+				<li class="selected"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+		<div id="banner">
+			<div class="w">
+				<ul>
+					<li>
+						<img src="img/banner_1.png" />
+						<span>
+							<h3>正品保证</h3>
+							<p>平台信誉 品质保障</p>
+						</span>
+					</li>
+					<li>
+						<img src="img/banner_2.png" />
+						<span>
+							<h3>全球直供</h3>
+							<p>海外货源 购物无忧</p>
+						</span>
+					</li>
+					<li>
+						<img src="img/banner_3.png" />
+						<span>
+							<h3>优质品牌</h3>
+							<p>名品荟萃 优质大牌</p>
+						</span>
+					</li>
+					<li>
+						<img src="img/banner_4.png" />
+						<span>
+							<h3>售后保障</h3>
+							<p>专业客服 售后无忧</p>
+						</span>
+					</li>
+				</ul>
+			</div>	
+		</div>
+		<!------------------------------引入商品展示----------------------------->
+    	<div class="index_content part"></div>
+    	<!------------------------------商品楼层结构----------------------------->
+		<div class="index_content2 part w"></div>	
+    	
+    	<!--footer文件-->
+    	<div class="foot_content_parent w">
+			<div class="foot_content main">
+				<div class="fl">
+					<ul>
+						<li>
+	                        <p>Copyright ©2014-2016 TPS138.com 前海云集品 版权所有. 粤ICP备14072989号-2</p>
+							<p>食品经营许可证：JY14403040013964</p>
+						</li>
+						<li>
+							<p>深圳前海云集品电子商务有限公司</p>
+							<p>汤普森跨境电子商务平台</p>
+						</li>
+						<li>
+	                        <a href="###">
+	                        	<i class="fa fa-angle-right"></i>
+	                        	关于我们</a>
+	                        <a href="###">
+	                        	<i class="fa fa-angle-right"></i>
+	                        	物流配送</a>
+	                        <a href="###">
+	                        	<i class="fa fa-angle-right"></i>
+	                        	售后服务</a>
+	                        <a href="###">
+	                        	<i class="fa fa-angle-right"></i>
+	                        	帮助中心</a>
+	                    </li>
+					</ul>
+				</div>
+				<div class="fl ce-l">				
+					<ul>
+						<li>联系方式</li>
+						<li>
+							<p>support@tps138.com</p>
+	                        <p>0755-88695066</p>
+	                   </li>
+					</ul>
+				</div>
+	            <div class="fr">
+					<img src="img/weixin.jpg">
+					<p>关注微信 赢取更多优惠</p>
+				</div>
+			</div>
+	
+		</div>
+		<ul class="scrollnav" id="scrollnav">  <!--楼梯效果-->
+			<a class="subnav" href="###">母婴</a>
+			<a class="subnav" href="###">美妆</a>
+			<a class="subnav" href="###">营养</a>
+			<a class="subnav" href="###">食品</a>
+			<a class="subnav" href="###">家具</a>
+			<a class="subnav" href="###">数码</a>
+			<a class="subnav" href="###">7F</a>
+			<a class="subnav subnavtop" href="###" page-scroll="#End">TOP</a>
+		</ul>
+    	
+	</body>
+	<script src="js/menu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/cookie.js" ></script>
+		<script src="js/LBT.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/unslider.min.js"></script>
+		<script src="js/goodsList.js"></script>
+		<script type="text/javascript">
+
+			$(function(){
+				
+				var div_banner=document.getElementById("banner");
+				var banner_li1=div_banner.getElementsByTagName("li")[3];
+				banner_li1.style.marginRight=0+"px";
+				
+				$(".header").load("header.html",function(){
+					var userlogin=getCookie("u_name");
+					if(userlogin==""){
+							$("#log_aaa").html("登陆");
+							$("#log_aaaa").html("注册");
+						}else{
+					$("#log_aaa").html("欢迎您 "+userlogin+" ");
+					$("#log_aaaa").html("退出");
+					
+					
+					$("#log_aaaa").click(function(){
+						setCookie("u_name", "", -10);
+						history.go(0);
+					});	
+			}
+					
+					
+				
+				});//加载头部
+				$(".index_content").load("goodthumb.html");//加载商品列表的轮播图
+				var url="json/catalog2.json";
+				//动态生成商品展示层
+				$.get(url,function(str){
+					for (var i in str) {
+						//console.log(i);	获取商品大类名称 
+						var div=document.createElement("div");
+						var div1=document.createElement("div");  //楼层标题
+						var divleft=document.createElement("div");  //左侧结构
+						var divcenter=document.createElement("div"); //中部结构
+						var divright=document.createElement("div");  //右侧结构
+						//楼层标题
+						var h2=document.createElement("h2");
+						h2.innerHTML=i;
+						div1.className='diswin_title';
+						div1.appendChild(h2);
+						//左侧生成各个大类中小类名称
+						divleft.className="content2_box_left";
+						var img=document.createElement("img");
+						img.src="img/"+i+".jpg";
+						var divlistcell=document.createElement("div");
+						divlistcell.className="left_listcell"
+						//生成中部轮播图
+						divcenter.className="content2_box_center banner";
+						divcenter.id="b04";
+						var ul=document.createElement("ul");
+						//插入四张图片
+						var li1=document.createElement("li");
+						var img1=document.createElement("img");
+						li1.appendChild(img1);
+						img1.src="img/"+i+"thumb1.jpg";
+						var li2=document.createElement("li");
+						var img2=document.createElement("img");
+						li2.appendChild(img2);
+						img2.src="img/"+i+"thumb2.jpg";
+						var li3=document.createElement("li");
+						var img3=document.createElement("img");
+						li3.appendChild(img3);
+						img3.src="img/"+i+"thumb3.jpg";
+						var li4=document.createElement("li");
+						var img4=document.createElement("img");
+						li4.appendChild(img4);
+						img4.src="img/"+i+"thumb4.jpg";
+						ul.appendChild(li1);
+						ul.appendChild(li2);
+						ul.appendChild(li3);
+						ul.appendChild(li4);
+
+						
+						divright.className="content2_box_right";
+						//从对应的json文件中提取四个商品
+						var url="json/"+i+".json";
+						addList2(url,'.content2_box_right','list',"0","4");
+						
+						var arr=str[i];
+						for (var j=0;j<arr.length;j++) {
+							var obj=arr[j];
+							for (var n in obj) {
+								//console.log(n);//左侧生成各个大类中小类名称
+								var a=document.createElement("a");
+								a.innerHTML=n;
+								a.href="list_page.html?url="+i+".json&classlist="+n;
+								a.style.color="black";
+								divlistcell.appendChild(a);
+							
+								
+									
+								
+							}
+							
+						}
+						divleft.appendChild(img);
+						divleft.appendChild(divlistcell);
+						divcenter.appendChild(ul);
+						div.className="index_content2_box main";
+						div.appendChild(div1);
+						div.appendChild(divleft);
+						div.appendChild(divcenter);
+						div.appendChild(divright);
+						$(".index_content2").append(div);
+					}
+					
+					var unslider = $('.banner').unslider({
+				        dots: true
+				    }),
+				    data04 = unslider.data('unslider');
+				    
+				    $('.unslider-arrow04').click(function() {
+				        var fn = this.className.split(' ')[1];
+				        data04[fn]();
+				    });
+	
+					
+				},"json")
+				//添加滚动事件，控制楼梯列表的出现
+				$(window).scroll(function(){
+					if($("body").scrollTop()||$("html").scrollTop()>1900){
+						$(".scrollnav").fadeIn("slow");
+					}else{
+						$(".scrollnav").fadeOut("slow");
+					}
+				})
+				
+				//楼梯效果实现
+				$(".subnav").click(function(){
+					$(this).css({"opacity":"1","background":"#ED4242"}).siblings().css({"opacity":"0.5","background":""})
+					s=$(this).index();
+					var totop;
+					if (s==7) {
+						totop=0;
+					}else{
+						totop=$(".index_content2_box").eq(s).offset().top-110;
+					}
+					$("html,body").stop().animate({
+						scrollTop:totop
+					},1000);
+				})
+			})
+
+//                                    导航栏
+
+		$(function() { 			  
+			 
+                   //搜索框的吸顶效果，当body向下滚动超过600后，搜索框相对向下慢慢滚动，否则在0-600之间，搜//索框执行慢慢向上滚动效果		 
+			 	$(window).scroll(function(){
+					if($("body").scrollTop()||$("html").scrollTop()>600){
+						$(".floatSearch").stop().slideDown("slow");
+					}else{
+						$(".floatSearch").stop().slideUp("slow");
+					}
+				})
+			 
+			
+			 
+			 //动态展示列表树，获取catalog中的json数据
+				var url="json/catalog.json";
+				$.get(url,function(str){
+					for (var i in str) {
+						//i表示最左边的大类商品名称，放在ul中的li中，然后a2=i；a2链接到i的json数据对应的列表页
+						var li=document.createElement("li");
+						var a2=document.createElement("a");
+						a2.innerHTML=i;
+						a2.className="cellTop";
+						a2.href="list_page.html?url="+i+".json";
+						li.appendChild(a2);
+						var div=document.createElement("div");
+						div.className="subclass_list_parent";
+						var ul=document.createElement("ul");
+						ul.className="subclass_list";
+						
+						var arr=str[i];
+						//获取中类商品对象
+						for (var j=0;j<arr.length;j++) {
+							var obj=arr[j];
+							//获取中类商品的各个子并布局
+							for (var n in obj) {
+								//console.log(n);
+								var li1=document.createElement("li");
+								var a1=document.createElement("a");
+								a1.innerHTML=n;
+								a1.className="cellTop";
+								a1.href="list_page.html?url="+i+".json&classlist="+n;
+								li1.appendChild(a1);
+								li1.className="class_name";
+								var li2=document.createElement("li");
+									li2.className="brand";
+								ul.appendChild(li1);
+								ul.appendChild(li2);
+								var newarr=obj[n].split("|");
+								for (var m=0;m<newarr.length;m++) {
+									
+									var a=document.createElement("a");
+									a.innerHTML=newarr[m];
+									li2.appendChild(a);
+								}
+								$(".brand a").last().css("clear","both");
+							}
+							
+						}
+						div.appendChild(ul);
+						li.appendChild(div);
+						$(".class_list").append(li);
+						
+					}
+					//列表树的显示隐藏
+					$(".catalog").mouseenter(function(){
+						$(".catalog .class_list").stop().slideDown("slow");
+					})
+					$(".catalog").mouseleave(function(){
+						$(".catalog .class_list").stop().slideUp("slow");
+					})
+				 
+				 
+					$(".class_list>li").mouseenter(function(){
+						$(this).children().first().next().stop().fadeIn("slow");
+					})
+					$(".class_list>li").mouseleave(function(){
+						$(this).children().first().next().stop().fadeOut();
+					})
+					
+				},"json")				
+			}); 
+		</script>
+</html>
